@@ -1,0 +1,113 @@
+h2 {
+    font: 1em;
+}
+#novo {
+    position: relative;
+    top: 40%;
+    font-size: 300%;
+    color: #fff626;
+}
+
+#tela-preta {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.31);
+}
+
+#cartas-mesa {
+    margin-bottom: 50px;
+}
+.mesa-jogo {
+    display: block;
+    clear: both;
+    display: block;
+    width: 714px;
+    height: 125px;
+    margin: 0 auto 0 auto;
+    padding-top: 50px;
+}
+li {
+    float: left;
+    width: 80px;
+    height: 113px;
+    border: solid 2px white;
+    border-radius: 7px;
+    padding: 4px;
+    margin: 0 5px 0 5px;
+}
+img {
+    width: 80px;
+    box-sizing: border-box;
+    margin: 0 auto 0 auto;
+}
+.carta-mes {
+    border-color: rgb(173, 41, 70);
+}
+
+#meio {
+    background-color: #0a720a;
+    display: block;
+    height: 125px;
+    padding: 20px;
+    border-radius: 100px;
+}
+table {
+    margin-left: 60px;
+    color: aqua;
+    float: left;
+}
+th, td{
+    border: double 5px rgb(165, 79, 29);
+    padding: 10px;
+}
+#botoes {
+    float: left;
+    margin-left: 20%;
+    padding-top: 20px;
+}
+.botao-jogo {
+    color: aliceblue;
+}
+.botao-partida {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #0a6e0a;
+}
+#botao-opiniao {
+    width: 200px;
+    margin-left: calc(50% - 100px);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*Mudança do tamanho das CARTAS para telas de até 725px*/
+@media screen and (max-width: 725px) {
+    .mesa-jogo {
+        width: 546px;
+    }
+    .carta {
+        width: 60px;
+        height: 85px;
+        margin: 0 3px 0 3px;
+    }
+    .cartas {
+        width: 60px;
+    }
+}
+
+/*@media (max-width: 700px) {
+    .mesa-jogo {
+        width: 98%;
+    }
+}*/
