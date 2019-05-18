@@ -16,13 +16,16 @@ let tableScore = function() {
 };
 
 let gamerJoin = function (jogador) {
+     let jog = "Jogador";
 
-    let letra = jogador.charAt(0);
-    let letraMai = letra.toUpperCase();
-    let jog = jogador.replace(letra, letraMai);
+    if(jogador != null) {
+        let letra = jogador.charAt(0);
+        let letraMai = letra.toUpperCase();
+        jog = jogador.replace(letra, letraMai);
 
-    if(jogador.length > 7) {
-        jog = jogador.substring(0, 7);
+        if(jogador.length > 7) {
+            jog = jogador.substring(0, 7);
+        }
     }
 
     $("nome-jogador-td").textContent = jog;

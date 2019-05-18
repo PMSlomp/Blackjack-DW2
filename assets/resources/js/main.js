@@ -17,7 +17,12 @@
     document.addEventListener('onload', value());
     let nome = function() {
         jogador = prompt('Digite seu nome');
-        alert(`bem vindo ${jogador}`);
+        if(jogador != null) {
+            alert(`Bem vindo ${jogador}`);
+        } else {
+            alert("Bem vindo");
+        }
+
         return jogador;
     };
 
