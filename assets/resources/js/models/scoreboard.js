@@ -18,7 +18,7 @@ let tableScore = function() {
 let gamerJoin = function (jogador) {
      let jog = "Jogador";
 
-    if(jogador != null) {
+    if(jogador != "") {
         let letra = jogador.charAt(0);
         let letraMai = letra.toUpperCase();
         jog = jogador.replace(letra, letraMai);
