@@ -10,7 +10,7 @@
         $("name").focus();
     };
 
-    $("name").addEventListener("keypress", function (e) {
+    window.document.forms[0].elements[0].addEventListener("keypress", function (e) {
         if (!((e.charCode >= 65 && e.charCode <= 90) || (e.charCode >= 97 && e.charCode <= 122) || (e.charCode == 32))) {
             textBox.value = "";
             textBox.value += `Não é autorizado o caracter ${e.key}`;
@@ -39,25 +39,49 @@
         }
     });
 
-    $("but-conferir").addEventListener("click", function () {
-        let selection = document.getElementsByName("opinion");
-        textBox.value = "";
+    let form = $("form");
+    form.onsubmit = function () {
+        let con = confirm("Enviar a avaliação. Confirma?");
 
-        for(let key in selection) {
-            if(selection[key].checked == true) {
-                formArray[2] = "Opinião: " + selection[key].value;
-            }
+        if(con) {
+            alert("Avaliação enviada. Obrigado");
+            return true;
         }
 
-        textBox = $("texto");
-        for(let i = 0 ; i < 3; i++) {
-            textBox.value += formArray[i];
-            textBox.value += "\n";
-        }
+        return false;
+    };
 
-        if(formArray[0] != "Falta nome" && formArray[1] != "Falta email" && formArray[2] != "") {
-            this.disabled = true;
-            $("enviar").disabled = false;
+    $("email").addEventListener("invalid", function () {
+
+        if(this.validity.valueMissing) {
+            this.setCustomValidity("Escrever um e-mail");
+        } else if (this.validity.typeMismatch) {
+            this.setCustomValidity("E-mail inválido");
+        } else {
+            this.setCustomValidity("");
+            form.onsubmit();
+        }
+    });
+
+    $("name").addEventListener("invalid", function () {
+
+        if(this.validity.valueMissing) {
+            this.setCustomValidity("Escreva seu nome");
+        } else {
+            this.setCustomValidity("");
+            form.onsubmit();
+        }
+    });
+
+    $("idade").addEventListener("invalid", function () {
+
+        if(this.validity.valueMissing) {
+            this.setCustomValidity("Idade necessária");
+        } else if(this.validity.patternMismatch) {
+            this.setCustomValidity("Idade válida apenas entre 3 e 120 anos");
+        } else {
+            this.setCustomValidity("");
+            form.onsubmit();
         }
     });
 

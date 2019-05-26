@@ -21,6 +21,10 @@ input {
 #email {
     width: 40ch;
 }
+#idade {
+    width: 5ch;
+}
+
 .opinion {
     display: inline-block;
 
@@ -32,3 +36,4 @@ button {
 #texto {
     width: 35ch;
 }
+
