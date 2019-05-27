@@ -78,7 +78,7 @@
         if(this.validity.valueMissing) {
             this.setCustomValidity("Idade necessária");
         } else if(this.validity.patternMismatch) {
-            this.setCustomValidity("Idade válida apenas entre 3 e 120 anos");
+            this.setCustomValidity("Idade válida apenas entre 3 e 129 anos");
         } else {
             this.setCustomValidity("");
             form.onsubmit();
