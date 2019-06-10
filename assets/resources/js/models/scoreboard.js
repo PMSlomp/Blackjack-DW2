@@ -1,24 +1,20 @@
-var Scoreboard = function(jogador) {
-
-    this.gamer = gamerScore();
-    this.table = tableScore();
-    gamerJoin(jogador);
-};
-
 let gamerScore = function() {
+    'use strict';
     let gamerScore = document.getElementsByName('pont-jog-td')[0];
     return gamerScore;
 };
 
 let tableScore = function() {
+    'use strict';
     let tableScore = $('pont-mesa-td');
     return tableScore;
 };
 
 let gamerJoin = function (jogador) {
-     let jog = "Jogador";
+    'use strict';
+    let jog = 'Jogador';
 
-    if(jogador != "") {
+    if(jogador !== '') {
         let letra = jogador.charAt(0);
         let letraMai = letra.toUpperCase();
         jog = jogador.replace(letra, letraMai);
@@ -28,5 +24,18 @@ let gamerJoin = function (jogador) {
         }
     }
 
-    $("nome-jogador-td").textContent = jog;
+    $('nome-jogador-td').textContent = jog;
 };
+
+var Scoreboard = function(jogador) {
+    'use strict';
+    this.gamer = gamerScore();
+    this.table = tableScore();
+    gamerJoin(jogador);
+};
+
+
+
+
+
+

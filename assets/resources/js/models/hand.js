@@ -1,7 +1,7 @@
 class Hand {
 
     constructor(deck) {
-        if(deck != undefined) {
+        if(deck !== undefined) {
             this.baralho = deck.baralho;
         } else {
             this.deck = new Deck();

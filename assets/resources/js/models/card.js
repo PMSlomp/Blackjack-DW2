@@ -1,3 +1,19 @@
+let valorNum = ((carta, asCardValue) => {
+    'use strict';
+    switch (carta.valor) {
+        case 'dois' : return 2;
+        case 'tres' : return 3;
+        case 'quatro' : return 4;
+        case 'cinco' : return 5;
+        case 'seis' : return 6;
+        case 'sete' : return 7;
+        case 'oito' : return 8;
+        case 'nove' : return 9;
+        case 'as' : return asCardValue;
+        default : return 10;
+    }
+});
+
 class Card {
     
     constructor(valor, simbolo) {
@@ -20,19 +36,3 @@ class Card {
         return this._imagem;
     }
 }
-
-'use strict';
-let valorNum = ((carta, asCardValue) => {
-    switch (carta.valor) {
-        case "dois" : return 2;
-        case "tres" : return 3;
-        case "quatro" : return 4;
-        case "cinco" : return 5;
-        case "seis" : return 6;
-        case "sete" : return 7;
-        case "oito" : return 8;
-        case "nove" : return 9;
-        case "as" : return asCardValue;
-        default : return 10;
-    }
-})

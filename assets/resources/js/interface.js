@@ -49,17 +49,18 @@ class Interface {
 
     start() {
         this._aux = true;
-        this.nextCard(this._gamerHand, "jog", this._gamerScore, this.gamerValue);
-        this.nextCard(this._gamerHand, "jog", this._gamerScore, this.gamerValue);
+        this.nextCard(this._gamerHand, 'jog', this._gamerScore, this.gamerValue);
+        this.nextCard(this._gamerHand, 'jog', this._gamerScore, this.gamerValue);
     }
 
     nextCard(hand, player, score, value) {
 
-        if((this.positionSelector > 1) && (player == "mesa")) {
+        if((this.positionSelector > 1) && (player === 'mesa')) {
             this.game.novaCartaMesa();
         }
 
-        this._playerPosition = document.querySelector(`#carta${this._positionSelector + 1}-${player}`);
+        this._playerPosition =
+            document.querySelector(`#carta${this._positionSelector + 1}-${player}`);
 
         this._playerPosition.src = hand[this._positionSelector].imagem;
 
@@ -68,17 +69,17 @@ class Interface {
         value = this.carValue(score, hand[this._positionSelector]);
 
         if((this._positionSelector <= 1) && (this._aux)) {
-            this._aux = false
-            this.nextCard(this.tableHand, "mesa", this.tableScore, this.tableValue);
+            this._aux = false;
+            this.nextCard(this.tableHand, 'mesa', this.tableScore, this.tableValue);
             this._positionSelector--;
         }
 
         this._aux = true;
         this._positionSelector++;
 
-        if(player == "mesa") {
+        if(player === 'mesa') {
             this._tableValue = value;
-            return ((this._tableValue < 20) && (this._tableValue <= this._gamerValue))
+            return ((this._tableValue < 20) && (this._tableValue <= this._gamerValue));
         } else {
             this._gamerValue = value;
             return true;
@@ -92,14 +93,14 @@ class Interface {
     }
 
     winner() {
-        let cor = ["#ffa500", "white"];
+        let cor = ['#ffa500', 'white'];
         let i = 0;
 
         this._message = document.getElementsByTagName('h2')[0];
         if((this.tableValue > 21 || this.tableValue < this.gamerValue) && (this.gamerValue <= 21)) {
-            mensagem.textContent = "Você ganhou! =)"
+            mensagem.textContent = 'Você ganhou! =)'
         } else {
-            this._message.textContent = "Você perdeu! =/"
+            this._message.textContent = 'Você perdeu! =/'
         }
 
         let that = this._message;
@@ -107,7 +108,7 @@ class Interface {
 
             that.style.color = cor[i];
 
-            if(i == 0) {
+            if(i === 0) {
                 i = 1;
             } else {
                 i = 0;
