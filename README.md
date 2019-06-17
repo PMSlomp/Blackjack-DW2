@@ -3,17 +3,17 @@ Projeto de Web 2 - GitHub Pages: https://pmslomp.github.io/Blackjack-DW2/
 
 QUALIDADE DO CÓDIGO
 - [x] Usar um Style Guide - apresentar o uso de pelo menos 10 regras do style escolhido (sugerido AirBnb)
-  *Require capitalized names for constructor functions
-  *Prohibit use of explicitly undeclared variables*
-  *Warn when variables are defined but never used
-  *Enforce tab width of 2 spaces
-  *Force all variable names to use either camelCase
+  * Require capitalized names for constructor functions
+  * Prohibit use of explicitly undeclared variables*
+  * Warn when variables are defined but never used
+  * Enforce tab width of 2 spaces
+  * Force all variable names to use either camelCase
 - [x] Usar um lint - mostrar a correção de pelo menos 5 problemas informados pelo lint (sugerido JSHint - usar o arquivo .jshintrc disponível no moodle)
-  *aspas duplas por aspas simples
-  *'use strict'
-  *declaração de variável antes do uso (card.js)
-  *término com ';'
-  *uso de '===' ou '!=='
+  * aspas duplas por aspas simples
+  * 'use strict'
+  * declaração de variável antes do uso (card.js)
+  * término com ';'
+  * uso de '===' ou '!=='
 - [x] Usar strict mode
 - [x] Usar Module Pattern
 - [x] Usar pasta assets e subpastas resources e libraries para organizar o código
