@@ -6,7 +6,7 @@ let gamerScore = function() {
 
 let tableScore = function() {
     'use strict';
-    let tableScore = $('pont-mesa-td');
+    let tableScore = $id('pont-mesa-td');
     return tableScore;
 };
 
@@ -15,6 +15,7 @@ let gamerJoin = function (jogador) {
     let jog = 'Jogador';
 
     if(jogador !== '') {
+        sessionStorage.setItem('name', jogador);
         let letra = jogador.charAt(0);
         let letraMai = letra.toUpperCase();
         jog = jogador.replace(letra, letraMai);
@@ -24,7 +25,7 @@ let gamerJoin = function (jogador) {
         }
     }
 
-    $('nome-jogador-td').textContent = jog;
+    $id('nome-jogador-td').textContent = jog;
 };
 
 var Scoreboard = function(jogador) {

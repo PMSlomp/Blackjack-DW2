@@ -1,35 +1,44 @@
 'use strict';
 (function () {
     let formArray = [];
-    let textBox = $('texto');
+    let textBox = $id('texto');
 
     window.onload = function () {
+
+        if(sessionStorage.name) {
+            $id('name').value = sessionStorage.getItem('name');
+        }
+
+        if(JSON.parse(localStorage.getItem('email') !== null)) {
+            $('#email').val(JSON.parse((localStorage.getItem('email'))).email);
+        }
+
         textBox.value = '';
 
         formArray = ['Falta nome', 'Falta email'];
-        $('name').focus();
+        $id('name').focus();
     };
 
     window.document.forms[0].elements[0].addEventListener('keypress', function (e) {
         if (!((e.charCode >= 65 && e.charCode <= 90) ||
             (e.charCode >= 97 && e.charCode <= 122) || (e.charCode === 32))) {
             textBox.value = '';
-            textBox.value += `Não é autorizado o caracter ${e.key}`;
+            textBox.value += `Não é autorizado o caracter $id{e.key}`;
             e.preventDefault();
         }
-        $('but-conferir').disabled = false;
+        $id('but-conferir').disabled = false;
     });
-    $('name').addEventListener('blur', function () {
+    $id('name').addEventListener('blur', function () {
         if(this.value !== '') {
             textBox.value = '';
             formArray[0] = 'Nome: ' + this.value;
         }
     });
 
-    $('email').addEventListener('focus', function () {
+    $id('email').addEventListener('focus', function () {
         textBox.value = '';
     });
-    $('email').addEventListener('blur', function () {
+    $id('email').addEventListener('blur', function () {
         if ((this.value.indexOf('@') === -1) ||
             (this.value.lastIndexOf('.') < this.value.indexOf('@'))) {
             this.style.borderColor = 'red';
@@ -41,8 +50,12 @@
         }
     });
 
-    let form = $('form');
+    let form = $id('form');
     form.onsubmit = function () {
+        let emailObj = {};
+        emailObj.email = $id('email').value;
+        localStorage.setItem('email', JSON.stringify(emailObj));
+
         let con = confirm('Enviar a avaliação. Confirma?');
 
         if(con) {
@@ -53,7 +66,7 @@
         return false;
     };
 
-    $('email').addEventListener('invalid', function () {
+    $id('email').addEventListener('invalid', function () {
 
         if(this.validity.valueMissing) {
             this.setCustomValidity('Escrever um e-mail');
@@ -65,7 +78,7 @@
         }
     });
 
-    $('name').addEventListener('invalid', function () {
+    $id('name').addEventListener('invalid', function () {
 
         if(this.validity.valueMissing) {
             this.setCustomValidity('Escreva seu nome');
@@ -75,7 +88,7 @@
         }
     });
 
-    $('idade').addEventListener('invalid', function () {
+    $id('idade').addEventListener('invalid', function () {
 
         if(this.validity.valueMissing) {
             this.setCustomValidity('Idade necessária');

@@ -8,14 +8,22 @@
             - 1;
             - 10;
             - 11.`));
-        } while(!(asCardValue == 1 || asCardValue == 10 || asCardValue == 11));
+        } while(!(asCardValue === 1 || asCardValue === 10 || asCardValue === 11));
     };
 
     let jogador = 'Jogador';
 
     document.addEventListener('onload', value());
+
     let nome = function() {
-        jogador = prompt('Digite seu nome');
+
+        if(sessionStorage.name) {
+            jogador = sessionStorage.getItem('name');
+        } else {
+            jogador = prompt('Digite seu nome');
+        }
+
+
         if(jogador != null) {
             alert(`Bem vindo ${jogador}`);
         } else {
@@ -26,9 +34,10 @@
     };
 
     nome();
+
     let int = new Interface(asCardValue, jogador);
 
-    let nextCardButton = $('botao-nova-carta');
+    let nextCardButton = $id('botao-nova-carta');
     nextCardButton.addEventListener('click', function() {
         event.preventDefault();
 
@@ -49,7 +58,7 @@
     });
 
 
-    let stopButton = $('botao-parar');
+    let stopButton = $id('botao-parar');
     stopButton.addEventListener('click', function() {
         event.preventDefault();
         let repeticion = (int.tableValue <= int._gamerValue);
@@ -74,9 +83,9 @@
     });
 
 
-    let newGameButton = $('botao-novo-jogo');
+    let newGameButton = $id('botao-novo-jogo');
     newGameButton.addEventListener('click', function() {
-        $('tela-preta').hidden = false;
+        $id('tela-preta').hidden = false;
 
         let re = function() {
             window.location.reload();
@@ -93,7 +102,7 @@
         this.style.color = '#FFFFFF';
     });
 
-    let opinion = $('botao-opiniao');
+    let opinion = $id('botao-opiniao');
     opinion.addEventListener('mouseover', function() {
         this.style.backgroundColor = '#7fff00';
         this.style.color = '#000000';

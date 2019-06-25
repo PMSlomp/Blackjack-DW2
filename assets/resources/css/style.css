@@ -73,7 +73,7 @@ article {
 }
 
 .maiuscula {
-    display: inline;
+    /*display: inline;*/
     text-transform: uppercase;
     font-weight: bold;
 

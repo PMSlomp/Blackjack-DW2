@@ -98,9 +98,9 @@ class Interface {
 
         this._message = document.getElementsByTagName('h2')[0];
         if((this.tableValue > 21 || this.tableValue < this.gamerValue) && (this.gamerValue <= 21)) {
-            mensagem.textContent = 'Você ganhou! =)'
+            mensagem.textContent = 'Você ganhou! =)';
         } else {
-            this._message.textContent = 'Você perdeu! =/'
+            this._message.textContent = 'Você perdeu! =/';
         }
 
         let that = this._message;
@@ -115,9 +115,10 @@ class Interface {
             }
         };
 
-        $('botao-nova-carta').remove($('botao-nova-carta'));
-        $('botao-parar').remove($('botao-parar'));
-        $('botao-novo-jogo').hidden = false;
+        $id('botao-nova-carta').remove($id('botao-nova-carta'));
+        $id('botao-parar').remove($id('botao-parar'));
+        //$id('botao-novo-jogo').hidden = false;
+        $('#botao-novo-jogo').fadeIn('slow');
 
         setInterval(mudaCor, 700);
     }

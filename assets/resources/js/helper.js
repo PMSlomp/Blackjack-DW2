@@ -1,4 +1,4 @@
 'use strict';
-let $ = function(id) {
+let $id = function(id) {
     return document.getElementById(id);
 };
