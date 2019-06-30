@@ -1,6 +1,6 @@
 'use strict';
 (function () {
-    let formArray = [];
+    //let formArray = [];
     let textBox = $id('texto');
 
     window.onload = function () {
@@ -15,7 +15,7 @@
 
         textBox.value = '';
 
-        formArray = ['Falta nome', 'Falta email'];
+        //formArray = ['Falta nome', 'Falta email'];
         $id('name').focus();
     };
 
@@ -31,7 +31,7 @@
     $id('name').addEventListener('blur', function () {
         if(this.value !== '') {
             textBox.value = '';
-            formArray[0] = 'Nome: ' + this.value;
+            //formArray[0] = 'Nome: ' + this.value;
         }
     });
 
@@ -46,7 +46,7 @@
             textBox.value += `E-mail inválido`;
         } else {
             this.style.borderColor = '';
-            formArray[1] = 'E-mail: ' + this.value;
+            //formArray[1] = 'E-mail: ' + this.value;
         }
     });
 
@@ -94,11 +94,17 @@
             this.setCustomValidity('Idade necessária');
         } else if(this.validity.patternMismatch) {
             this.setCustomValidity('Idade válida apenas entre 3 e 129 anos');
+            console.log(this.value);
+            textBox.value = 'A idade não pode ser ' + this.value;
         } else {
             this.setCustomValidity('');
-            formArray[2] = 'Idade: ' + this.value;
+            //formArray[2] = 'Idade: ' + this.value;
             form.onsubmit();
         }
+    });
+
+    $id('idade').addEventListener('valid', function () {
+        textBox.value = '';
     });
 
 })();

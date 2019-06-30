@@ -28,7 +28,7 @@ let gamerJoin = function (jogador) {
     $id('nome-jogador-td').textContent = jog;
 };
 
-var Scoreboard = function(jogador) {
+let Scoreboard = function(jogador) {
     'use strict';
     this.gamer = gamerScore();
     this.table = tableScore();
