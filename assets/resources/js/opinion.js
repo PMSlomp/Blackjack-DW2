@@ -51,7 +51,7 @@
     });
 
     let form = $id('form');
-    form.onsubmit = function () {
+    form.onsubmit = function confirmar() {
         let emailObj = {};
         emailObj.email = $id('email').value;
         localStorage.setItem('email', JSON.stringify(emailObj));
